@@ -31,7 +31,7 @@
 - Beispiel: $1011_2 = 1x2^3 + 0x2^2 + 1x2^1 + 1x2^0$ 
 -  Alle positiven natürlichen Zahlen inklusive der Null können durch Folgen von Symbolen aus der Menge {0,1} repräsentiert werden. Wenn $n$ der Anzahl der Bits entspricht, ist $x_0$ das niederwertigste Bit (Least Significant Bit, LSB) und $x_{n-1}$ das höchstwertigste Bit (Most Significant Bit, MSB).
 
-#### Umstellung von Dezimal- in Binärzahlen
+#### Umstellung von Dezimal und Binärzahlen
 
 - Bei der Umwandlung von Dualzahlen in Dezimalzahlen werden die Ziffern mit ihren Stellen wertigkeiten ausmultipliziert und die Ergebnisse addiert.
 
