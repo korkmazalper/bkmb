@@ -1,7 +1,7 @@
-
+# Kanban Intro
 Kanban ist eine agile Methode des Projekt- und Prozessmanagements. Der Begriff kommt aus dem Japanischen und bedeutet „Signalkarte“.
 
-Prinzip:
+## Prinzip:
 
 Arbeit wird in visuellen Boards dargestellt.
 
