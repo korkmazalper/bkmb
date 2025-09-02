@@ -45,18 +45,27 @@ Linux-Dateien sind ein Dateisystem mit einer hierarchischen Struktur mit einem e
 • ``/dev`` – Gerätedateien
 • ``/proc`` – spezielle Systemdateien
 
-## Systemeinloggungs- und -ausloggungsbefehle sowie Benutzerinformationsbefehle (ssh, login, logout, exit, passwd, whoami)
+## Systemeinloggungs- und -ausloggungsbefehle sowie Benutzerinformationsbefehle (exit, passwd, whoami)
+
 - ``passwd`` wird verwendet, um das Benutzerpasswort zu ändern.
+
 - ``exit`` und ``logout`` ermöglichen es uns, uns aus dem Benutzerkonto abzumelden.
+
 - ``whoami`` ermöglicht es uns, herauszufinden, wer der Benutzer eines offenen Kontos ist.
+
+- ``pwd`` Der Befehl pwd (print working directory) ist einer der einfachsten, aber nützlichsten Befehle. Er gibt den absoluten Pfad des Verzeichnisses aus, in dem Sie sich gerade befinden. Dies ist besonders hilfreich, wenn man sich in der Verzeichnisstruktur verirrt hat oder um sicherzustellen, dass man Befehle am richtigen Ort ausführt. Die Ausgabe ist eine einfache Textzeile, die den Pfad von der Wurzel (``/``) bis zum aktuellen Standort anzeigt.
+
+
+- ``cd`` Der Befehl cd (change directory) wird verwendet, um das aktuelle Verzeichnis zu wechseln. Mit cd [Pfad] kann man in ein bestimmtes Verzeichnis wechseln. Mit ``cd ..`` geht man eine Ebene höher, und mit ``cd ~`` gelangt man direkt ins Home-Verzeichnis des Benutzers.
+
 
 ## Befehlsoptionen
 
 Befehlsoptionen ermöglichen eine gewisse
 Kontrolle über Befehle.
 • Vereinbarung:
-– Wird in der Regel zusammen mit einem Minuszeichen (–) und einem Buchstaben verwendet („-l“).
-– Gelegentlich wird es zusammen mit zwei Minuszeichen (--) und einem Wort verwendet („--help“).
+– Wird in der Regel zusammen mit einem Minuszeichen (–) und einem Buchstaben verwendet (``-l``).
+– Gelegentlich wird es zusammen mit zwei Minuszeichen (``--``) und einem Wort verwendet („``--help``“).
 – Manchmal folgt auf den Befehl nichts.
 
 ## Linux-Befehlsstruktur
@@ -65,16 +74,16 @@ Kontrolle über Befehle.
 
 ![alt text](image-3.png)
 
-```bash
+```shell
 > ls -l /etc
 ```
 
 ## Jokerzeichen / Wildcards
-### ?
+### ``?``
 ersetzt ein Zeichen / Character 
  ``file? file1, file2, files,...`` An der Stelle des Zeichens `?` kann ein beliebiges Zeichen stehen.
 
-### * 
+### ``*`` 
 ersetzt eine Gruppe von Zeichen file1.*
 file1.cc, file1.gz, file1.bmp An der Stelle des Zeichens * kann eine beliebige Zeichengruppe stehen.
 • Diese beiden Zeichen ermöglichen es, die Befehle, die wir sehen werden, auf mehrere Dateien gleichzeitig anzuwenden. Sie werden nur zusammen mit Datei- und Verzeichnisnamen verwendet. Sie werden nicht mit Befehlen verwendet.
@@ -86,7 +95,7 @@ file1.cc, file1.gz, file1.bmp An der Stelle des Zeichens * kann eine beliebige Z
 
 Bitte beachten Sie, dass diese Befehle in IDEs mit eingebettetem Bash wie VSCode möglicherweise nicht funktionieren.
 
-## Dateien auflisten (ls)
+- ``ls`` Dateiauflisten
 • ``>ls`` listet die Dateien im aktuellen Verzeichnis auf.
 • ``ls /home/anna`` listet die Dateien im Verzeichnis ``/home/anna`` auf.
 • ``>ls –l`` listet die Dateien und zeigt Details wie Datum, Größe usw. an.
@@ -95,3 +104,8 @@ Bitte beachten Sie, dass diese Befehle in IDEs mit eingebettetem Bash wie VSCode
 • ``>ls –ltr`` listet in umgekehrter chronologischer Reihenfolge auf
 • ``>ls –a`` zeigt auch versteckte Dateien an. Dateien mit der Endung . sind versteckte Dateien. Zum Beispiel ``.cshrc.``
 • ``>ls –l *.cc`` listet Dateien mit der Endung cc detailliert auf.
+
+- ``touch`` Der Befehl touch wird meistens verwendet, um eine leere Datei zu erstellen. Zum Beispiel: ``touch test.txt`` erstellt eine Datei mit dem Namen ``test.txt``. Wenn die Datei schon existiert, wird lediglich `**das Änderungsdatum**` aktualisiert.
+- ``mkdir`` Der Befehl ``mkdir`` (make directory) wird verwendet, um ein neues Verzeichnis (Ordner) zu erstellen. Beispiel: ``mkdir Projekte`` erstellt einen Ordner mit dem Namen Projekte. Mit mkdir -p pfad/zum/ordner können auch mehrere Ebenen auf einmal erstellt werden.
+- ``echo`` Der Befehl ``echo`` wird verwendet, um Text oder Variablen im Terminal auszugeben. Beispiel: ``echo Hallo Welt`` zeigt Hallo Welt an. Auch nützlich, um Inhalte in eine Datei zu schreiben, z. B. ``echo "Text" > datei.txt``
+- ``cat`` Der Befehl ``cat`` (concatenate) wird meistens verwendet, um den Inhalt von Dateien im Terminal anzuzeigen. Beispiel: ``cat text.txt`` zeigt den Inhalt der Datei text.txt. Mit cat datei1 datei2 kann man auch mehrere Dateien hintereinander ausgeben. Zusätzlich lässt sich cat mit Umleitungen kombinieren, z. B. ``cat > neu.txt``, um eine Datei neu zu erstellen und Text hineinzuschreiben.
