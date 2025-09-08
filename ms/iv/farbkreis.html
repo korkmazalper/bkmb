@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Itten Farbkreis – Primär-Dreieck + Kreis</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f4f4f4;
+      font-family: sans-serif;
+      gap: 20px;
+    }
+    canvas {
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #0077cc;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+<body>
+<canvas id="canvas" width="600" height="600"></canvas>
+<button id="nextBtn">Nächster Schritt</button>
+
+<script>
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext("2d");
+const centerX = canvas.width / 2;
+const centerY = canvas.height / 2;
+const outerRadius = 250;
+const innerRadius = 120;
+
+// 12 renkli Itten Farbkreis
+// Rot üst, Blau sol alt, Gelb sağ alt
+const colors = [
+  "red", "orangered", "orange", "gold",
+  "yellow", "yellowgreen", "green", "teal",
+  "blue", "indigo", "violet", "crimson"
+];
+
+// Ana renklerin köşe pozisyonları
+const primar = [
+  {x: centerX, y: centerY - innerRadius}, // Rot üst
+  {x: centerX + innerRadius * Math.sin(Math.PI/3), y: centerY + innerRadius * Math.cos(Math.PI/3)}, // Gelb sağ alt
+  {x: centerX - innerRadius * Math.sin(Math.PI/3), y: centerY + innerRadius * Math.cos(Math.PI/3)}  // Blau sol alt
+];
+
+// Sekundär renkler: kenar ortaları
+const sekundar = [
+  {x: (primar[0].x + primar[1].x)/2, y: (primar[0].y + primar[1].y)/2, color: "orange"}, // Rot+Gelb
+  {x: (primar[1].x + primar[2].x)/2, y: (primar[1].y + primar[2].y)/2, color: "green"},  // Gelb+Blau
+  {x: (primar[2].x + primar[0].x)/2, y: (primar[2].y + primar[0].y)/2, color: "violet"}  // Blau+Rot
+];
+
+let step = -1;
+
+function drawCircle() {
+  const total = colors.length;
+  const angleStep = 2*Math.PI/total;
+
+  // Rot üstte, Blau sol alt, Gelb sağ alt olacak şekilde kaydırma
+  const rotation = -Math.PI/2; // üstte Rot
+  for (let i=0;i<total;i++){
+    const start = i*angleStep + rotation;
+    const end = start + angleStep;
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, outerRadius, start, end, false);
+    ctx.arc(centerX, centerY, innerRadius, end, start, true);
+    ctx.closePath();
+    ctx.fillStyle = colors[i];
+    ctx.fill();
+  }
+}
+
+function drawPrimarDreieck() {
+  ctx.beginPath();
+  ctx.moveTo(primar[0].x, primar[0].y);
+  ctx.lineTo(primar[1].x, primar[1].y);
+  ctx.lineTo(primar[2].x, primar[2].y);
+  ctx.closePath();
+  ctx.strokeStyle = "#000";
+  ctx.lineWidth = 3;
+  ctx.stroke();
+  for (let i=0;i<primar.length;i++){
+    ctx.beginPath();
+    ctx.arc(primar[i].x, primar[i].y, 15, 0, 2*Math.PI);
+    ctx.fillStyle = colors[i*4]; // Rot, Gelb, Blau
+    ctx.fill();
+    ctx.stroke();
+  }
+}
+
+function drawSekundarKanten() {
+  for (let i=0;i<sekundar.length;i++){
+    ctx.beginPath();
+    ctx.arc(sekundar[i].x, sekundar[i].y, 12, 0, 2*Math.PI);
+    ctx.fillStyle = sekundar[i].color;
+    ctx.fill();
+    ctx.stroke();
+  }
+}
+
+function draw(step){
+  ctx.clearRect(0,0,canvas.width,canvas.height);
+  drawCircle();
+  if(step>=0) drawPrimarDreieck();
+  if(step>=1) drawSekundarKanten();
+}
+
+document.getElementById("nextBtn").addEventListener("click", ()=>{
+  step = (step+1)%3; // 0=primär, 1=sekundär, 2=full
+  draw(step);
+});
+
+// Başlangıçta boş
+draw(-1);
+</script>
+</body>
+</html>
