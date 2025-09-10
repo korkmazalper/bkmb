@@ -10,6 +10,13 @@ public class Telefon {
     public double hoehe;
     public int bauJahr;
 	
+    public Telefon () {
+    	this("IPhone X");
+    }
+    public Telefon (String modell) {
+    	modell=modell;
+    }
+    
     public void anrufen() {
         System.out.println("Ich rufe an ...");
     }
@@ -41,7 +48,7 @@ public class Telefon {
         System.out.println("Breite: " + breite + " mm");
         System.out.println("Höhe: " + hoehe + " mm");
         System.out.println("============");
-        
+        System.out.println("============");
         System.out.println("Baujahr: " + bauJahr);
     }
 
@@ -54,6 +61,12 @@ public class Telefon {
     }
     public void whatsappOeffnen() {
         System.out.println("Ich öffne WhatsApp ...");
+    }
+    
+    public final void schlafe(int minuten) throws InterruptedException{
+    	System.out.println("schlafe ...");
+    	
+    	
     }
 
 }
