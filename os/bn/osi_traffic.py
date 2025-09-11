@@ -2,7 +2,6 @@ from scapy.all import sniff, Ether, IP, TCP, UDP, Raw
 import psutil
 
 def get_active_ethernet_interface():
-    """Aktif Ethernet adaptörünü bul"""
     for iface_name, addrs in psutil.net_if_addrs().items():
         stats = psutil.net_if_stats().get(iface_name)
         if stats is not None and stats.isup and "Ethernet" in iface_name:
@@ -10,7 +9,6 @@ def get_active_ethernet_interface():
     return None
 
 def show_packet_layers(packet):
-    """Paketin OSI katmanlarını göster"""
     print("\n--- Paket ---")
     if packet.haslayer(Ether):
         eth = packet[Ether]
@@ -26,7 +24,7 @@ def show_packet_layers(packet):
         print(f"[L4] UDP: sport={udp.sport}, dport={udp.dport}")
     if packet.haslayer(Raw):
         raw = packet[Raw].load
-        print(f"[L7] Raw Data (truncated): {raw[:50]}...")  # Sadece ilk 50 byte göster
+        print(f"[L7] Raw Data (truncated): {raw[:50]}...")  
 
 def capture_packets(count=100):
     iface = get_active_ethernet_interface()
@@ -35,7 +33,6 @@ def capture_packets(count=100):
         return
 
     print(f"Paket yakalanıyor: {iface}")
-    # TCP ve UDP paketlerini yakala (port sınırı yok)
     packets = sniff(iface=iface, filter="tcp or udp", count=count)
     for pkt in packets:
         show_packet_layers(pkt)
