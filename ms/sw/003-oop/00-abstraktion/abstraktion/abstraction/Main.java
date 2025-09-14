@@ -1,5 +1,8 @@
+package abstraction;
+
 public class Main {
     public static void main(String[] args) {
+
         Telefon telefon = new Telefon();
         telefon.marke = "Samsung";
         telefon.modell = "Galaxy S21";
@@ -10,6 +13,6 @@ public class Main {
         telefon.anrufen();
         telefon.detailsAnzeigen();
         telefon.browserOeffnen();
-        
+
     }
 }

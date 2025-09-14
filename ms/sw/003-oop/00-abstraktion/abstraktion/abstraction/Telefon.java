@@ -1,3 +1,4 @@
+package abstraction;
 
 public class Telefon {
     public String marke;
@@ -8,6 +9,7 @@ public class Telefon {
     public double breite;
     public double hoehe;
     public int bauJahr;
+
 
     public void anrufen() {
         System.out.println("Ich rufe an ...");
