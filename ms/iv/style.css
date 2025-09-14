@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+main {
+    padding: 20px;
+}
+
+.color-container {
+    display: inline-block; 
+    text-align: center;
+    margin: 10px;
+}
+
+.color-box {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+}
+
+.red-box {
+    background-color: rgb(255, 0, 0);
+}
+
+.green-box {
+    background-color: rgb(0, 255, 0);
+}
+
+.blue-box {
+    background-color: rgb(0, 0, 255);
+}
+
+.yellow-box {
+    background-color: rgb(255, 255, 0);
+}
+
+.orange-box {
+    background-color: rgb(255, 165, 0);
+}
+
+.purple-box {
+    background-color: rgb(128, 0, 128);
+}
+
+.teal-box {
+    background-color: rgb(0, 128, 128);
+}
+
+.pink-box {
+    background-color: rgb(255, 192, 203);
+}
+.schwarz-box {
+    background-color: rgb(0, 0, 0);
+}
+.weiss-box {
+    background-color: rgb(255, 255, 255);
+}
+.grau-box {
+    background-color: rgb(128, 128, 128);
+}
+
+
+
+.my-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px; 
+}
+
+.my-button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ddd;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
