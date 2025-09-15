@@ -87,7 +87,7 @@ IP: 192.168.1.0/26
 
 ## Beispiel: /26-Netz
 
-<!-- IP: 192.168.1.0/26 => 26 Bit -> Netzwerk, 6 Bit Host
+IP: 192.168.1.0/26 => 26 Bit -> Netzwerk, 6 Bit Host
 
 Subnetzmaske: 255.255.255.192 -> 8 bit= 255 , 11000000=128 + 64= 192
 
@@ -100,4 +100,3 @@ Broadcast-Adresse: 192.168.1.63
 Nutzbare Hosts: 192.168.1.1 – 192.168.1.62
 
 Gateway: meist 192.168.1.1
--->
