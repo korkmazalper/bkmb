@@ -9,9 +9,9 @@
 | Fahrzeug     | Attribute                                                                                                   | Verhalten (Methoden)                                                                                                    |
 | ------------ | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | **Auto**     | Marke, Baujahr, Anzahl der Reifen, Farbe, Geschwindigkeitslimit, Anzahl der Türen      | starten(), bremsen(), hupen(), anzeigenDetails()                                                |
-| **Fahrrad**  | Marke, Baujahr, Anzahl der Reifen, Farbe, Geschwindigkeitslimit, Hat einen Korb (ja/nein), Anzahl der Gänge | starten(), bremsen(), anzeigenBasisDetails(), klingeln(), anzeigenDetails()                                             |
-| **Motorrad** | Marke, Baujahr, Anzahl der Reifen, Farbe, Geschwindigkeitslimit, Motorleistung     | starten(), bremsen(), anzeigenBasisDetails(), gasGeben(), anzeigenDetails()                                             |
-| **Bus**      | Marke, Baujahr, Anzahl der Reifen, Farbe, Geschwindigkeitslimit, Anzahl der Sitzplätze, aktuelle Fahrgäste  | starten(), bremsen(), anzeigenBasisDetails(), gasGeben() |
+| **Fahrrad**  | Marke, Baujahr, Anzahl der Reifen, Farbe, Geschwindigkeitslimit, Hat einen Korb (ja/nein), Anzahl der Gänge | starten(), bremsen(), klingeln(), anzeigenDetails()                                             |
+| **Motorrad** | Marke, Baujahr, Anzahl der Reifen, Farbe, Geschwindigkeitslimit, Motorleistung     | starten(), bremsen(), gasGeben(), anzeigenDetails()                                             |
+| **Bus**      | Marke, Baujahr, Anzahl der Reifen, Farbe, Geschwindigkeitslimit, Anzahl der Sitzplätze, aktuelle Fahrgäste  | starten(), bremsen(), gasGeben() |
 
 - Welche Eigenschaften und welches Verhalten ist gemeinsam?
 
