@@ -45,6 +45,8 @@ public class Tier {
 	//getter und setter Methode
 	
 }
+```
+````java
 package tiere;
 
 public class Fisch  extends Tier{
@@ -56,6 +58,9 @@ public class Fisch  extends Tier{
 	}
 	//getter und setter methode
 }
+
+```
+````java
 package tiere;
 
 public class SaugeTier  extends Tier{
@@ -68,6 +73,8 @@ public class SaugeTier  extends Tier{
 	//getter und setter methode
 
 }
+```
+````java
 package tiere;
 
 public class Vogel extends Tier {
