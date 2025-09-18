@@ -28,7 +28,7 @@
 - Superklasse (Basisklasse, Elternklasse)
 - Subklasse (abgeleitete Klasse, Kindklasse)
 
-````java
+```java
 package tiere;
 
 public class Tier {
@@ -46,7 +46,7 @@ public class Tier {
 	
 }
 ```
-````java
+```java
 package tiere;
 
 public class Fisch  extends Tier{
@@ -60,7 +60,7 @@ public class Fisch  extends Tier{
 }
 
 ```
-````java
+```java
 package tiere;
 
 public class SaugeTier  extends Tier{
@@ -74,7 +74,7 @@ public class SaugeTier  extends Tier{
 
 }
 ```
-````java
+```java
 package tiere;
 
 public class Vogel extends Tier {
