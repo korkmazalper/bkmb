@@ -27,3 +27,55 @@
 - Wartbarkeit
 - Superklasse (Basisklasse, Elternklasse)
 - Subklasse (abgeleitete Klasse, Kindklasse)
+
+````java
+package tiere;
+
+public class Tier {
+	public String name;
+	public int alter;
+	public int gewicht;
+	
+	public void bewegen() {
+		//.....
+	}
+	public void fressen(){
+		//...
+	}
+	//getter und setter Methode
+	
+}
+package tiere;
+
+public class Fisch  extends Tier{
+
+	public String lebenIn;
+	
+	public void schwimmen() {
+		
+	}
+	//getter und setter methode
+}
+package tiere;
+
+public class SaugeTier  extends Tier{
+	public String fellFarbe;
+	
+	public void zeigeLaufen() {
+		
+	}
+	
+	//getter und setter methode
+
+}
+package tiere;
+
+public class Vogel extends Tier {
+	public int maxFlugHoehe;
+	public void zeigeZiel() {
+		//....
+	}
+	//getter und setter methode
+}
+
+```
